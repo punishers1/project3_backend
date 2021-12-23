@@ -17,7 +17,7 @@ app.use(cors());
 
 
 
-app.use("/",addPatinetRouter);
+// app.use("/",addPatinetRouter);
 
 
 
@@ -32,8 +32,8 @@ app.use("/users", addusersRouter);
 app.use("/Patients", addusersRouter);
 
 /// Res
-app.use("/Patient", addPatinetRouter);
-app.use("/addPatient", addPatinetRouter);
+app.use("/", addPatinetRouter);
+// app.use("/addPatient", addPatinetRouter);
 
 
 
