@@ -6,17 +6,8 @@ const PatientsSchema = new Schema({
   nationalId: String,
   gender: String,
   phoneNumber: String,
-  visit: [
-    {
-      date: String,
-      temperature: Number,
-      bloodPressure: String,
-      weight: String,
-      heartRate: String,
-      diagnose: String,
-      drNotes: String,
-    },
-  ],
+  
+  
 });
 
 const Patients = mongoose.model("Patients", PatientsSchema);
