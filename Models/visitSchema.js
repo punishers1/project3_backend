@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 
 const visitSchema = new mongoose.Schema({
-      patientId:{type: mongoose.Schema.Types.ObjectId, ref: 'Patient'},
+      patientId:{type: mongoose.Schema.Types.ObjectId, ref: 'Patients'},
       date: String,
       nurseId:String,
       doctorId: String,
       temperature: String,
       bp: String,
       weight: String,
+      typeStatus: String,
       heartRate: String,
       drTreatment: String,
       diagnose: String,
@@ -17,4 +18,4 @@ const visitSchema = new mongoose.Schema({
 })
 
 const Visit = mongoose.model("Visit", visitSchema);
-module.exports= Visit;
+module.exports= {Visit};

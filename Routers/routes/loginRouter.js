@@ -1,18 +1,20 @@
 const express = require("express");
 const logInRouter = express.Router();
-// const { authenticateToken } = require("../../auth/userAuthenticate");
+
+ const { authenticateToken } = require("../../auth/userAuthenticate");
 // getAllUsers,
 //   changeHealthStatus,
 //   changePassword,
 const {
   getDataForLogIn,
-  getAllUsers,
-  saveUser,
+  getUserDataFromToken,
+
 } = require("../controllers/login");
 
 
 
 logInRouter.post("/", getDataForLogIn)
+logInRouter.get("/",authenticateToken, getUserDataFromToken)
 
 
 module.exports = { logInRouter };
