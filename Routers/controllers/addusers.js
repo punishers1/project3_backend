@@ -1,5 +1,6 @@
-const User = require("../../models/UserSchema");
+const {User} = require("../../models/UserSchema")
 const Patients= require("../../models/PatientsSchema");
+const Roles= require("../../models/RolesSchema")
 const bcrypt = require("bcrypt");
 
 
@@ -39,6 +40,12 @@ const getAllPatients= (req,res)=>{
   );
 }
 
-module.exports={saveUser,getAllUsers,getAllPatients
+const getRoles= (req,res)=>{
+  Roles.find({}, (err, result) =>
+  res.json({ result: result })
+  );
+}
+
+module.exports={saveUser,getAllUsers,getAllPatients,  getRoles
      }
     // AddNewUser

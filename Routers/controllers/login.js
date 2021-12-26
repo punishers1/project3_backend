@@ -19,7 +19,7 @@ const getDataForLogIn = (req, res) => {
           nationalid: result.nationalid,
           fullName: result.fullName,
           role: result.role,
-          password: result.password,
+          
 
         };
         const token = jwt.sign(payload, process.env.SECRET_KEY);
@@ -33,5 +33,11 @@ const getDataForLogIn = (req, res) => {
   });
 };
 
-module.exports = {getDataForLogIn};
+function getUserDataFromToken(req,res){
+  const token = req.user
+  res.json({token:token})
+
+}
+
+module.exports = {getDataForLogIn,getUserDataFromToken};
 

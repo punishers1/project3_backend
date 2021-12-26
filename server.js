@@ -21,18 +21,18 @@ app.use(cors());
 
 
 
-app.use('/user',logInRouter)
+app.use('/logIn',logInRouter)
 
 
 
 
 /// admin
- app.use("/add", addusersRouter);
-app.use("/users", addusersRouter);
-app.use("/Patients", addusersRouter);
+ app.use("/", addusersRouter);
+app.use("/", addusersRouter);
+app.use("/", addusersRouter);
 
 /// Res
-app.use("/", addPatinetRouter);
+app.use("/Res", addPatinetRouter);
 // app.use("/addPatient", addPatinetRouter);
 
 
